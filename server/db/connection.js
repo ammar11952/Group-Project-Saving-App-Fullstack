@@ -7,7 +7,7 @@ const conn = mongoose
     return db;
   })
   .catch((err) => {
-    console.log('Connection Error');
+    console.log('Connection Error: ', err.message);
   });
 
 module.exports = conn;

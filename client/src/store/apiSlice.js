@@ -23,7 +23,12 @@ export const apiSlice = createApi({
 
     getTransaction: builder.query({
       query: () => '/api/transaction',
-      providesTags: ['transaction', 'balance'],
+      providesTags: ['transaction'],
+    }),
+
+    getBalance: builder.query({
+      query: () => '/api/balance',
+      providesTags: ['balance'],
     }),
 
     // add new Transaction
@@ -56,14 +61,7 @@ export const apiSlice = createApi({
     //   invalidatesTags: ['balance'],
     // }),
 
-    getBalance: builder.query({
-      query: () => ({
-        url: '/api/balance',
-        provideTags: ['balance'],
-        // providesTags: ['balance'],
-      }),
-      // invalidatesTags: ['balance'],
-    }),
+    // invalidatesTags: ['balance'],
   }),
 });
 
