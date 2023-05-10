@@ -52,16 +52,22 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ['transaction', 'balance'],
     }),
-
-    // putBalance: builder.mutation({
-    //   query: () => ({
-    //     url: '/api/balance',
-    //     // provideTags: ['balance'],
-    //   }),
-    //   invalidatesTags: ['balance'],
-    // }),
-
-    // invalidatesTags: ['balance'],
+    putSignup: builder.mutation({
+      query: (userData) => ({
+        // delete: 'http://localhost:8080/api/transaction'
+        url: '/api/signup',
+        method: 'PUT',
+        body: userData,
+      }),
+    }),
+    putLogin: builder.mutation({
+      query: (userData) => ({
+        // delete: 'http://localhost:8080/api/transaction'
+        url: '/api/login',
+        method: 'PUT',
+        body: userData,
+      }),
+    }),
   }),
 });
 
